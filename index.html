@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Career Guidance Program | Symbiotic Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --primary-light: #3b82f6;
+            --feature-purple: #7e22ce;
+            --feature-teal: #0d9488;
+            --feature-orange: #ea580c;
+            --feature-pink: #db2777;
+            --feature-gold: #f59e0b;
+            --dark: #1f2937;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            color: var(--dark);
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background elements */
+        .shape {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape.circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            top: 10%;
+            left: 5%;
+        }
+        
+        .shape.triangle {
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 100px solid var(--feature-purple);
+            top: 20%;
+            right: 8%;
+            animation-delay: -2s;
+        }
+        
+        .shape.square {
+            width: 90px;
+            height: 90px;
+            background: var(--feature-orange);
+            bottom: 15%;
+            left: 10%;
+            border-radius: 15px;
+            animation-delay: -4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-link {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .about-link {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .join-link {
+            background: linear-gradient(135deg, var(--feature-orange), #f97316);
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+        }
+
+        .header-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hero Banner */
+        .hero {
+            padding: 120px 5% 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 30% 70%, rgba(234, 88, 12, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 25px 0 20px;
+            line-height: 1.3;
+            color: var(--darker);
+        }
+
+        .hero .program-title {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .hero .program-subtitle {
+            font-size: 1.3rem;
+            color: var(--feature-orange);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 35px;
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        /* Program Banner */
+        .program-banner {
+            background: linear-gradient(135deg, var(--feature-purple), #a855f7);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(126, 34, 206, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-banner::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .program-banner h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .program-banner p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--darker);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            padding: 30px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 28px;
+            color: white;
+        }
+
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--darker);
+        }
+
+        .feature-content p {
+            color: var(--dark);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Speaker Section */
+        .speaker-section {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+        }
+
+        .speaker-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .speaker-image {
+            flex: 1;
+            min-height: 400px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+
+        .speaker-info {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .speaker-info h2 {
+            font-size: 2rem;
+            color: var(--darker);
+            margin-bottom: 15px;
+        }
+
+        .speaker-info .speaker-title {
+            color: var(--feature-orange);
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .speaker-info p {
+            color: var(--dark);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 5%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-container p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 45px;
+            background: white;
+            color: var(--primary-blue);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker);
+            color: var(--light);
+            text-align: center;
+            padding: 30px;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .speaker-container {
+                flex-direction: column;
+            }
+            
+            .speaker-image {
+                width: 100%;
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 5%;
+            }
+            
+            .header-buttons {
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header-link {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .program-banner h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 5% 60px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero .program-title {
+                font-size: 1rem;
+                padding: 8px 20px;
+            }
+            
+            .hero .program-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .feature-card {
+                padding: 25px 20px;
+            }
+            
+            .speaker-info {
+                padding: 30px 20px;
+            }
+            
+            .speaker-info h2 {
+                font-size: 1.7rem;
+            }
+            
+            .cta-container h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background shapes -->
+    <div class="shape circle"></div>
+    <div class="shape triangle"></div>
+    <div class="shape square"></div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="https://symbioticlearning.com/logo.png" alt="Symbiotic Learning Logo">
+            <div class="logo-text">Symbiotic Learning</div>
+        </div>
+        <div class="header-buttons">
+            <a href="https://symbioticlearning.com/about" class="header-link about-link">
+                <i class="fas fa-info-circle"></i> About Us
+            </a>
+            <a href="#join" class="header-link join-link">
+                <i class="fas fa-user-plus"></i> Join Now
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="program-title">Career Guidance Program</div>
+            <h1>Government Job Prospects for Engineering Graduates</h1>
+            <div class="program-subtitle">Essential Session for 2nd, 3rd & 4th Year Engineering Students</div>
+            <p>This comprehensive counseling program will guide you on how to prepare yourself in this competitive era for government jobs, PSU recruitments, and other prestigious career opportunities available for engineering graduates.</p>
+            
+            <a href="#join" class="cta-button">
+                <i class="fas fa-user-graduate"></i> Register for the Program
+            </a>
+        </div>
+    </section>
+
+    <!-- Program Banner -->
+    <div class="program-banner">
+        <h2>Why This Counseling Program is Essential?</h2>
+        <p>In today's highly competitive environment, early preparation and strategic guidance can make all the difference. Our program provides the roadmap and insider knowledge you need to navigate the complex landscape of government job opportunities for engineering graduates.</p>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-title">
+            <h2>What Makes This Program Unique?</h2>
+            <p>We've designed this program specifically for engineering students to bridge the gap between academic learning and career success in government sectors.</p>
+        </div>
+        
+        <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--primary-blue), #3b82f6);">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Targeted Preparation</h3>
+                    <p>Learn exactly what government organizations look for in engineering candidates and how to position yourself as the ideal applicant.</p>
+                </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--feature-teal), #14b8a6);">
+                    <i class="fas fa-road"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Roadmap to Success</h3>
+                    <p>Get a clear, year-by-year action plan tailored to your current academic level (2nd, 3rd or 4th year).</p>
+                </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--feature-purple), #a855f7);">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Insider Knowledge</h3>
+                    <p>Benefit from first-hand experience of our alumni who have successfully navigated these career paths.</p>
+                </div>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--feature-orange), #f97316);">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Exam Strategies</h3>
+                    <p>Master the specific examination patterns and interview techniques used in government sector recruitments.</p>
+                </div>
+            </div>
+            
+            <!-- Feature 5 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, #db2777, #ec4899);">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Network Building</h3>
+                    <p>Connect with like-minded peers and alumni who can support your career journey.</p>
+                </div>
+            </div>
+            
+            <!-- Feature 6 -->
+            <div class="feature-card">
+                <div class="feature-icon" style="background: linear-gradient(135deg, var(--feature-gold), #fbbf24);">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Career Guidance</h3>
+                    <p>Understand the various career paths available and how to choose the right one for your skills and aspirations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaker Section -->
+    <section class="speaker-section">
+        <div class="speaker-container">
+            <div class="speaker-image">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="speaker-info">
+                <h2>About Our Guest Speaker</h2>
+                <span class="speaker-title">Alumni of Aligarh Muslim University</span>
+                <p>Our distinguished guest speaker is currently serving in a high-ranking position with the Bihar Government's Rural Development and Water Resources Department. With extensive experience in government sector recruitment and career progression, he brings invaluable insights into what it takes to succeed in these competitive positions.</p>
+                <p>Having walked the same path as current students, our speaker understands the challenges and opportunities facing engineering graduates today and will provide practical, actionable advice.</p>
+                <a href="#join" class="cta-button">
+                    <i class="fas fa-calendar-check"></i> Attend the Session
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="join">
+        <div class="cta-container">
+            <h2>Ready to Transform Your Career Prospects?</h2>
+            <p>Don't miss this opportunity to gain strategic insights from someone who's successfully navigated the path you're about to take. Limited seats available for this exclusive session.</p>
+            
+            <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" class="cta-button" target="_blank">
+                <i class="fas fa-edit"></i> Register Now
+            </a>
+            
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">For any queries, contact us at <strong>+91-91498222922</strong></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Symbiotic Learning. All Rights Reserved.</p>
+        <p>Empowering Engineering Students for Government Sector Success</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate elements when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.feature-card, .speaker-container, .program-banner').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
