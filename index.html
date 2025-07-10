@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineering Career Guidance Program | Symbiotic Learning</title>
+    <title>Engineering Career Guidance | Symbiotic Learning</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #2563eb;
@@ -94,21 +94,25 @@
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .logo {
+        .logo-container {
             display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo img {
-            height: 50px;
+            flex-direction: column;
         }
 
         .logo-text {
-            font-size: 22px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
             font-weight: 700;
             color: var(--primary-blue);
             line-height: 1.2;
+        }
+
+        .logo-subtext {
+            font-size: 12px;
+            color: var(--dark);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
         }
 
         .header-buttons {
@@ -127,6 +131,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            font-size: 15px;
         }
 
         .about-link {
@@ -169,13 +174,6 @@
             margin: 0 auto;
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            margin: 25px 0 20px;
-            line-height: 1.3;
-            color: var(--darker);
-        }
-
         .hero .program-title {
             display: inline-block;
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
@@ -185,6 +183,15 @@
             font-weight: 600;
             margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            font-size: 18px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            margin: 25px 0 20px;
+            line-height: 1.3;
+            color: var(--darker);
         }
 
         .hero .program-subtitle {
@@ -200,6 +207,58 @@
             margin: 0 auto 35px;
             color: var(--dark);
             line-height: 1.7;
+        }
+
+        /* Speaker Section */
+        .speaker-section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .speaker-container {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .speaker-image {
+            flex: 1;
+            min-height: 400px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+
+        .speaker-info {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .speaker-info h2 {
+            font-size: 2rem;
+            color: var(--darker);
+            margin-bottom: 15px;
+        }
+
+        .speaker-info .speaker-title {
+            color: var(--feature-orange);
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .speaker-info p {
+            color: var(--dark);
+            line-height: 1.7;
+            margin-bottom: 30px;
         }
 
         /* Program Banner */
@@ -312,56 +371,118 @@
             font-size: 1rem;
         }
 
-        /* Speaker Section */
-        .speaker-section {
-            padding: 80px 5%;
-            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+        /* Program Details */
+        .program-details {
+            background: linear-gradient(135deg, var(--feature-teal), #14b8a6);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(13, 148, 136, 0.25);
         }
 
-        .speaker-container {
+        .program-details h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .details-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .detail-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .detail-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .detail-card p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* About Institute */
+        .institute-section {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+            text-align: center;
+        }
+
+        .institute-container {
             max-width: 1000px;
             margin: 0 auto;
-            display: flex;
-            align-items: center;
             background: white;
             border-radius: 20px;
-            overflow: hidden;
+            padding: 50px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .speaker-image {
-            flex: 1;
-            min-height: 400px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 5rem;
-        }
-
-        .speaker-info {
-            flex: 1;
-            padding: 40px;
-        }
-
-        .speaker-info h2 {
-            font-size: 2rem;
+        .institute-container h2 {
+            font-size: 2.2rem;
             color: var(--darker);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        .speaker-info .speaker-title {
-            color: var(--feature-orange);
-            font-weight: 600;
-            margin-bottom: 25px;
-            display: block;
-        }
-
-        .speaker-info p {
+        .institute-container p {
             color: var(--dark);
-            line-height: 1.7;
+            line-height: 1.8;
             margin-bottom: 30px;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 180px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--dark);
+            font-weight: 600;
+            margin: 0;
         }
 
         /* CTA Section */
@@ -450,10 +571,15 @@
             .header-link {
                 width: 100%;
                 justify-content: center;
+                padding: 12px 15px;
+            }
+            
+            .hero {
+                padding: 100px 5% 60px;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .hero p {
@@ -471,11 +597,28 @@
             .program-banner h2 {
                 font-size: 1.5rem;
             }
+            
+            .program-details {
+                padding: 30px 20px;
+            }
+            
+            .detail-card {
+                min-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .institute-container {
+                padding: 30px 20px;
+            }
         }
 
         @media (max-width: 480px) {
-            .hero {
-                padding: 100px 5% 60px;
+            .logo-text {
+                font-size: 24px;
+            }
+            
+            .logo-subtext {
+                font-size: 10px;
             }
             
             .hero h1 {
@@ -483,7 +626,7 @@
             }
             
             .hero .program-title {
-                font-size: 1rem;
+                font-size: 16px;
                 padding: 8px 20px;
             }
             
@@ -506,6 +649,23 @@
             .cta-container h2 {
                 font-size: 1.8rem;
             }
+            
+            .institute-container h2 {
+                font-size: 1.8rem;
+            }
+            
+            .stats {
+                gap: 15px;
+            }
+            
+            .stat-item {
+                min-width: 140px;
+                padding: 15px;
+            }
+            
+            .stat-item h3 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -517,9 +677,9 @@
 
     <!-- Header Section -->
     <header>
-        <div class="logo">
-            <img src="https://symbioticlearning.com/logo.png" alt="Symbiotic Learning Logo">
+        <div class="logo-container">
             <div class="logo-text">Symbiotic Learning</div>
+            <div class="logo-subtext">A unit of Symbiotic Edusolutions Pvt. Ltd.</div>
         </div>
         <div class="header-buttons">
             <a href="https://symbioticlearning.com/about" class="header-link about-link">
@@ -538,10 +698,21 @@
             <h1>Government Job Prospects for Engineering Graduates</h1>
             <div class="program-subtitle">Essential Session for 2nd, 3rd & 4th Year Engineering Students</div>
             <p>This comprehensive counseling program will guide you on how to prepare yourself in this competitive era for government jobs, PSU recruitments, and other prestigious career opportunities available for engineering graduates.</p>
-            
-            <a href="#join" class="cta-button">
-                <i class="fas fa-user-graduate"></i> Register for the Program
-            </a>
+        </div>
+    </section>
+
+    <!-- Speaker Section -->
+    <section class="speaker-section">
+        <div class="speaker-container">
+            <div class="speaker-image">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="speaker-info">
+                <h2>About Our Guest Speaker</h2>
+                <span class="speaker-title">Alumni of Aligarh Muslim University</span>
+                <p>Our distinguished guest speaker is currently serving in a high-ranking position with the Bihar Government's Rural Development and Water Resources Department. With extensive experience in government sector recruitment and career progression, he brings invaluable insights into what it takes to succeed in these competitive positions.</p>
+                <p>Having walked the same path as current students, our speaker understands the challenges and opportunities facing engineering graduates today and will provide practical, actionable advice.</p>
+            </div>
         </div>
     </section>
 
@@ -602,45 +773,55 @@
                     <p>Master the specific examination patterns and interview techniques used in government sector recruitments.</p>
                 </div>
             </div>
-            
-            <!-- Feature 5 -->
-            <div class="feature-card">
-                <div class="feature-icon" style="background: linear-gradient(135deg, #db2777, #ec4899);">
-                    <i class="fas fa-network-wired"></i>
-                </div>
-                <div class="feature-content">
-                    <h3>Network Building</h3>
-                    <p>Connect with like-minded peers and alumni who can support your career journey.</p>
-                </div>
-            </div>
-            
-            <!-- Feature 6 -->
-            <div class="feature-card">
-                <div class="feature-icon" style="background: linear-gradient(135deg, var(--feature-gold), #fbbf24);">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <div class="feature-content">
-                    <h3>Career Guidance</h3>
-                    <p>Understand the various career paths available and how to choose the right one for your skills and aspirations.</p>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Speaker Section -->
-    <section class="speaker-section">
-        <div class="speaker-container">
-            <div class="speaker-image">
-                <i class="fas fa-user-tie"></i>
+    <!-- Program Details -->
+    <div class="program-details">
+        <h2><i class="fas fa-calendar-alt"></i> Program Details</h2>
+        <div class="details-container">
+            <div class="detail-card">
+                <i class="fas fa-calendar-day"></i>
+                <h3>Date</h3>
+                <p>25th August, 2025</p>
             </div>
-            <div class="speaker-info">
-                <h2>About Our Guest Speaker</h2>
-                <span class="speaker-title">Alumni of Aligarh Muslim University</span>
-                <p>Our distinguished guest speaker is currently serving in a high-ranking position with the Bihar Government's Rural Development and Water Resources Department. With extensive experience in government sector recruitment and career progression, he brings invaluable insights into what it takes to succeed in these competitive positions.</p>
-                <p>Having walked the same path as current students, our speaker understands the challenges and opportunities facing engineering graduates today and will provide practical, actionable advice.</p>
-                <a href="#join" class="cta-button">
-                    <i class="fas fa-calendar-check"></i> Attend the Session
-                </a>
+            <div class="detail-card">
+                <i class="fas fa-clock"></i>
+                <h3>Time</h3>
+                <p>4:00 PM - 6:00 PM IST</p>
+            </div>
+            <div class="detail-card">
+                <i class="fas fa-video"></i>
+                <h3>Mode</h3>
+                <p>Online via Zoom</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Institute -->
+    <section class="institute-section">
+        <div class="institute-container">
+            <h2>About Symbiotic Learning</h2>
+            <p>Symbiotic Learning, a unit of Symbiotic Edusolutions Pvt. Ltd., has been transforming engineering education since 2015. We specialize in bridging the gap between academic learning and industry requirements, with a focus on government job preparation.</p>
+            <p>Our alumni network includes hundreds of successful engineers working in prestigious government positions across India, making us uniquely positioned to guide the next generation of engineering professionals.</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>8,000+</h3>
+                    <p>Students Guided</p>
+                </div>
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Placements</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Expert Sessions</p>
+                </div>
+                <div class="stat-item">
+                    <h3>12+</h3>
+                    <p>Years Experience</p>
+                </div>
             </div>
         </div>
     </section>
@@ -676,7 +857,7 @@
             });
         });
 
-        // Animate elements when they come into view
+        // Add animation to elements when they come into view
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -685,7 +866,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.feature-card, .speaker-container, .program-banner').forEach(el => {
+        document.querySelectorAll('.feature-card, .speaker-container, .program-banner, .detail-card').forEach(el => {
             observer.observe(el);
         });
     </script>
